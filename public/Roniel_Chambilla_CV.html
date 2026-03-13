@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Roniel Fernando Chambilla Del Carpio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #1a1a1a;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 12mm 14mm;
+      background: #fff;
+    }
+    @media print {
+      body { padding: 10mm; }
+      a { color: #0f172a; text-decoration: none; }
+    }
+    h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 12pt;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 10pt;
+      color: #334155;
+      margin-bottom: 20px;
+    }
+    .contact a { color: #0ea5e9; }
+    .contact a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 4px;
+      margin: 18px 0 10px 0;
+    }
+    p { margin: 0 0 8px 0; }
+    .summary { margin-bottom: 4px; }
+    .job, .project {
+      margin-bottom: 14px;
+    }
+    .job-title, .project-title { font-weight: 700; font-size: 11pt; }
+    .job-meta, .project-meta { font-size: 10pt; color: #64748b; margin-bottom: 4px; }
+    .job-desc, .project-desc { margin-top: 4px; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 6px 16px;
+      font-size: 10pt;
+    }
+    .skills-cat { font-weight: 600; color: #334155; }
+    ul { margin: 4px 0 0 0; padding-left: 18px; }
+    li { margin-bottom: 2px; }
+    .placeholder { background: #fef3c7; color: #92400e; padding: 0 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Roniel Fernando Chambilla Del Carpio</h1>
+    <p class="subtitle">Desarrollador Full-Stack · En transición a Ciberseguridad</p>
+    <div class="contact">
+      <span>📧 <a href="mailto:roniel.car.50@gmail.com">roniel.car.50@gmail.com</a></span>
+      <span>🔗 <a href="https://github.com/Roniel543" target="_blank" rel="noopener">github.com/Roniel543</a></span>
+      <span>🔗 <a href="https://www.linkedin.com/in/roniel-chambilla" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span>📍 <span class="placeholder">Ciudad, Perú</span></span>
+      <span>📱 <span class="placeholder">+51 XXX XXX XXX</span></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Resumen</h2>
+    <p class="summary">
+      Desarrollador full-stack con experiencia en aplicaciones web (frontend, backend, APIs, bases de datos). 
+      En transición a ciberseguridad: formación autodidacta con foco en fundamentos (Linux, redes, seguridad web) 
+      y búsqueda de oportunidades en el sector. Base sólida en desarrollo que aporto para entender vulnerabilidades, 
+      buenas prácticas y arquitecturas seguras.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiencia / Proyectos en producción</h2>
+
+    <div class="project">
+      <div class="project-title">FagSol — Escuela Virtual</div>
+      <div class="project-meta">Plataforma educativa · Django, Next.js, PostgreSQL, Docker, Mercado Pago · Azure</div>
+      <p class="project-desc">
+        Plataforma educativa en producción: cursos, roles (estudiante, instructor, admin), JWT, pasarela de pagos (Mercado Pago), 
+        multi-moneda, certificados, dashboards, webhooks. Clean Architecture en backend, frontend por features.
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">EduTravel del Perú</div>
+      <div class="project-meta">Sitio web tour operador · PHP, MySQL, HTML/CSS, Tailwind · Hostinger</div>
+      <p class="project-desc">
+        Sitio para tour operador: turismo nacional, internacional y estudiantil; programas por regiones, cotización rápida, 
+        formulario de contacto, WhatsApp, panel admin. Estructura MVC, desplegado en Hostinger.
+      </p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">SolInd — E-Commerce Industrial</div>
+      <div class="project-meta">Plataforma corporativa + e-commerce · HTML, CSS, Bootstrap 5, PHP, MySQL, Mercado Pago · cPanel</div>
+      <p class="project-desc">
+        Plataforma para empresa industrial peruana: catálogo, carrito, checkout, panel de administración (categorías, productos, pedidos), 
+        sesiones, CSRF, pasarela de pagos. Desplegado en cPanel.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tecnologías</h2>
+    <div class="skills-grid">
+      <span class="skills-cat">Lenguajes:</span>
+      <span>TypeScript, Python, JavaScript, HTML, CSS</span>
+      <span class="skills-cat">Frameworks:</span>
+      <span>Django, Flask, Node.js, Next.js, Astro</span>
+      <span class="skills-cat">Bases de datos:</span>
+      <span>PostgreSQL, MySQL</span>
+      <span class="skills-cat">Herramientas:</span>
+      <span>Docker, Git, Git Bash, Linux</span>
+      <span class="skills-cat">Diseño:</span>
+      <span>Figma</span>
+      <span class="skills-cat">Cloud / Hosting:</span>
+      <span>Azure, Vercel, cPanel, Hostinger, Render</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formación</h2>
+    <p><span class="placeholder">[Título, institución, año — o "Formación autodidacta y proyectos en producción"]</span></p>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <p><span class="placeholder">[Español: nativo. Inglés: nivel técnico/lectura — ajusta según tu nivel]</span></p>
+  </section>
+
+  <p style="margin-top: 20px; font-size: 9pt; color: #94a3b8;">
+    CV generado a partir del portafolio. Actualiza los campos marcados en amarillo antes de enviar.
+  </p>
+</body>
+</html>
