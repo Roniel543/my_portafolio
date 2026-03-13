@@ -4,157 +4,387 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV — Roniel Fernando Chambilla Del Carpio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --accent: #0ea5e9;
+      --accent-dark: #0284c7;
+      --sidebar-bg: #0f172a;
+      --sidebar-text: #e2e8f0;
+      --sidebar-muted: #94a3b8;
+      --main-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 15px; }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      font-size: 11pt;
-      line-height: 1.4;
-      color: #1a1a1a;
-      max-width: 210mm;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--main-bg);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .cv-wrap {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 12mm 14mm;
-      background: #fff;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+      background: var(--card-bg);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
-    @media print {
-      body { padding: 10mm; }
-      a { color: #0f172a; text-decoration: none; }
-    }
-    h1 {
-      font-size: 22pt;
-      font-weight: 700;
-      margin: 0 0 4px 0;
-      letter-spacing: -0.02em;
-    }
-    .subtitle {
-      font-size: 12pt;
-      color: #475569;
-      margin-bottom: 12px;
-    }
-    .contact {
+
+    /* —— Sidebar —— */
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 32px 24px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px 20px;
-      font-size: 10pt;
-      color: #334155;
-      margin-bottom: 20px;
+      flex-direction: column;
+      gap: 28px;
     }
-    .contact a { color: #0ea5e9; }
-    .contact a:hover { text-decoration: underline; }
-    h2 {
-      font-size: 11pt;
+    .sidebar-photo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Outfit, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+    .sidebar h3 {
+      font-family: Outfit, sans-serif;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #0f172a;
-      border-bottom: 2px solid #0f172a;
-      padding-bottom: 4px;
-      margin: 18px 0 10px 0;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid rgba(14, 165, 233, 0.4);
     }
-    p { margin: 0 0 8px 0; }
-    .summary { margin-bottom: 4px; }
-    .job, .project {
+    .sidebar ul { list-style: none; }
+    .sidebar li {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+      color: var(--sidebar-muted);
+    }
+    .sidebar li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .sidebar a {
+      color: var(--sidebar-text);
+      text-decoration: none;
+    }
+    .sidebar a:hover { color: var(--accent); }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      color: var(--sidebar-muted);
+    }
+    .contact-item a { color: var(--sidebar-text); }
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius);
+      background: rgba(14, 165, 233, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .skill-tag {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.15);
+      color: var(--sidebar-text);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      margin: 3px 3px 3px 0;
+    }
+    .edu-item {
       margin-bottom: 14px;
     }
-    .job-title, .project-title { font-weight: 700; font-size: 11pt; }
-    .job-meta, .project-meta { font-size: 10pt; color: #64748b; margin-bottom: 4px; }
-    .job-desc, .project-desc { margin-top: 4px; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 6px 16px;
-      font-size: 10pt;
+    .edu-item strong {
+      font-size: 0.85rem;
+      color: var(--sidebar-text);
+      display: block;
+      margin-bottom: 2px;
     }
-    .skills-cat { font-weight: 600; color: #334155; }
-    ul { margin: 4px 0 0 0; padding-left: 18px; }
-    li { margin-bottom: 2px; }
-    .placeholder { background: #fef3c7; color: #92400e; padding: 0 4px; }
+    .edu-item span {
+      font-size: 0.75rem;
+      color: var(--sidebar-muted);
+    }
+    .lang-item {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--sidebar-muted);
+    }
+    .lang-item strong { color: var(--sidebar-text); }
+
+    /* —— Main —— */
+    .main {
+      padding: 36px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .main h1 {
+      font-family: Outfit, sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .main .subtitle {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .main h2 {
+      font-family: Outfit, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sidebar-bg);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .main p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .main p:last-child { margin-bottom: 0; }
+    .summary {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.06) 0%, rgba(14, 165, 233, 0.02) 100%);
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .block {
+      margin-bottom: 20px;
+    }
+    .block:last-child { margin-bottom: 0; }
+    .block-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .block-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .block-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .project-card {
+      background: var(--main-bg);
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover { box-shadow: var(--shadow); }
+    .project-card:last-child { margin-bottom: 0; }
+    .job-card {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .job-card:last-child { border-bottom: 0; }
+
+    @media (max-width: 700px) {
+      .cv-wrap {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        padding: 24px 20px;
+        gap: 20px;
+      }
+      .main { padding: 24px 20px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .cv-wrap {
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .main .subtitle { color: var(--accent-dark); }
+      a { color: inherit; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Roniel Fernando Chambilla Del Carpio</h1>
-    <p class="subtitle">Desarrollador Full-Stack · En transición a Ciberseguridad</p>
-    <div class="contact">
-      <span>📧 <a href="mailto:roniel.car.50@gmail.com">roniel.car.50@gmail.com</a></span>
-      <span>🔗 <a href="https://github.com/Roniel543" target="_blank" rel="noopener">github.com/Roniel543</a></span>
-      <span>🔗 <a href="https://www.linkedin.com/in/roniel-chambilla" target="_blank" rel="noopener">LinkedIn</a></span>
-      <span>📍 <span class="placeholder">Ciudad, Perú</span></span>
-      <span>📱 <span class="placeholder">+51 XXX XXX XXX</span></span>
-    </div>
-  </header>
+  <div class="cv-wrap">
+    <aside class="sidebar">
+      <div class="sidebar-photo" aria-hidden="true">RC</div>
+      <p style="text-align: center; font-size: 0.8rem; color: var(--sidebar-muted);">Roniel Chambilla</p>
 
-  <section>
-    <h2>Resumen</h2>
-    <p class="summary">
-      Desarrollador full-stack con experiencia en aplicaciones web (frontend, backend, APIs, bases de datos). 
-      En transición a ciberseguridad: formación autodidacta con foco en fundamentos (Linux, redes, seguridad web) 
-      y búsqueda de oportunidades en el sector. Base sólida en desarrollo que aporto para entender vulnerabilidades, 
-      buenas prácticas y arquitecturas seguras.
-    </p>
-  </section>
+      <section>
+        <h3>Contacto</h3>
+        <div class="contact-item">
+          <span class="contact-icon">✉</span>
+          <a href="mailto:roniel.car.50@gmail.com">roniel.car.50@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <a href="tel:+51945704973">+51 945 704 973</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Cerro Colorado, Arequipa – Perú</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🔗</span>
+          <a href="https://github.com/Roniel543" target="_blank" rel="noopener">GitHub / Roniel543</a>
+        </div>
+      </section>
 
-  <section>
-    <h2>Experiencia / Proyectos en producción</h2>
+      <section>
+        <h3>Tecnologías</h3>
+        <div>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </section>
 
-    <div class="project">
-      <div class="project-title">FagSol — Escuela Virtual</div>
-      <div class="project-meta">Plataforma educativa · Django, Next.js, PostgreSQL, Docker, Mercado Pago · Azure</div>
-      <p class="project-desc">
-        Plataforma educativa en producción: cursos, roles (estudiante, instructor, admin), JWT, pasarela de pagos (Mercado Pago), 
-        multi-moneda, certificados, dashboards, webhooks. Clean Architecture en backend, frontend por features.
-      </p>
-    </div>
+      <section>
+        <h3>Formación</h3>
+        <div class="edu-item">
+          <strong>Desarrollo de Software</strong>
+          <span>IEST La Recoleta · 2023 – 2025</span>
+        </div>
+        <div class="edu-item">
+          <strong>Secundaria</strong>
+          <span>Colegio Honorio Delgado Espinoza · 2018 – 2022</span>
+        </div>
+      </section>
 
-    <div class="project">
-      <div class="project-title">EduTravel del Perú</div>
-      <div class="project-meta">Sitio web tour operador · PHP, MySQL, HTML/CSS, Tailwind · Hostinger</div>
-      <p class="project-desc">
-        Sitio para tour operador: turismo nacional, internacional y estudiantil; programas por regiones, cotización rápida, 
-        formulario de contacto, WhatsApp, panel admin. Estructura MVC, desplegado en Hostinger.
-      </p>
-    </div>
+      <section>
+        <h3>Idiomas</h3>
+        <div class="lang-item"><strong>Español</strong> — Nativo</div>
+        <div class="lang-item"><strong>Inglés</strong> — Intermedio</div>
+        <div class="lang-item"><strong>Francés</strong> — Básico</div>
+      </section>
+    </aside>
 
-    <div class="project">
-      <div class="project-title">SolInd — E-Commerce Industrial</div>
-      <div class="project-meta">Plataforma corporativa + e-commerce · HTML, CSS, Bootstrap 5, PHP, MySQL, Mercado Pago · cPanel</div>
-      <p class="project-desc">
-        Plataforma para empresa industrial peruana: catálogo, carrito, checkout, panel de administración (categorías, productos, pedidos), 
-        sesiones, CSRF, pasarela de pagos. Desplegado en cPanel.
-      </p>
-    </div>
-  </section>
+    <main class="main">
+      <header>
+        <h1>Roniel Fernando Chambilla Del Carpio</h1>
+        <p class="subtitle">Desarrollador Full-Stack · En transición a Ciberseguridad</p>
+      </header>
 
-  <section>
-    <h2>Tecnologías</h2>
-    <div class="skills-grid">
-      <span class="skills-cat">Lenguajes:</span>
-      <span>TypeScript, Python, JavaScript, HTML, CSS</span>
-      <span class="skills-cat">Frameworks:</span>
-      <span>Django, Flask, Node.js, Next.js, Astro</span>
-      <span class="skills-cat">Bases de datos:</span>
-      <span>PostgreSQL, MySQL</span>
-      <span class="skills-cat">Herramientas:</span>
-      <span>Docker, Git, Git Bash, Linux</span>
-      <span class="skills-cat">Diseño:</span>
-      <span>Figma</span>
-      <span class="skills-cat">Cloud / Hosting:</span>
-      <span>Azure, Vercel, cPanel, Hostinger, Render</span>
-    </div>
-  </section>
+      <section>
+        <h2>Resumen</h2>
+        <p class="summary">
+          Desarrollador full-stack con experiencia en aplicaciones web (frontend, backend, APIs, bases de datos).
+          En transición a <strong>ciberseguridad</strong>: formación autodidacta con foco en fundamentos (Linux, redes, seguridad web)
+          y búsqueda de oportunidades en el sector. Base sólida en desarrollo que aporto para entender vulnerabilidades,
+          buenas prácticas y arquitecturas seguras.
+        </p>
+      </section>
 
-  <section>
-    <h2>Formación</h2>
-    <p><span class="placeholder">[Título, institución, año — o "Formación autodidacta y proyectos en producción"]</span></p>
-  </section>
+      <section>
+        <h2>Proyectos en producción</h2>
 
-  <section>
-    <h2>Idiomas</h2>
-    <p><span class="placeholder">[Español: nativo. Inglés: nivel técnico/lectura — ajusta según tu nivel]</span></p>
-  </section>
+        <div class="project-card">
+          <div class="block-title">FagSol — Escuela Virtual</div>
+          <div class="block-meta">Django 5, Next.js 14, PostgreSQL, Docker, Redis, Celery, Mercado Pago, JWT · Azure</div>
+          <p class="block-desc">
+            Plataforma educativa en producción: cursos, roles (estudiante, instructor, admin), registro e inicio de sesión (JWT),
+            pasarela de pagos (Mercado Pago), multi-moneda, certificados, dashboards y webhooks. Clean Architecture en backend, frontend por features.
+          </p>
+        </div>
 
-  <p style="margin-top: 20px; font-size: 9pt; color: #94a3b8;">
-    CV generado a partir del portafolio. Actualiza los campos marcados en amarillo antes de enviar.
-  </p>
+        <div class="project-card">
+          <div class="block-title">EduTravel del Perú</div>
+          <div class="block-meta">PHP, MySQL, HTML, CSS, Tailwind · Hostinger</div>
+          <p class="block-desc">
+            Sitio web para tour operador con +50 años de experiencia. Turismo nacional, internacional y estudiantil; programas por regiones y ciudades,
+            cotización rápida, formulario de contacto, WhatsApp, panel de administración. Estructura MVC.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="block-title">Fabriconstruc — E-Commerce Industrial</div>
+          <div class="block-meta">HTML, CSS, Bootstrap 5, PHP, MySQL, Mercado Pago · cPanel</div>
+          <p class="block-desc">
+            Plataforma corporativa + e-commerce para empresa industrial peruana: catálogo, carrito, checkout, panel de administración
+            (categorías, productos, pedidos), sesiones, CSRF, pasarela de pagos.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experiencia laboral</h2>
+        <div class="job-card">
+          <div class="block-title">Digitador / Atención al cliente — Estudio Fotográfico Montesinos</div>
+          <p class="block-desc">Atención a clientes, digitalización y organización de información.</p>
+        </div>
+        <div class="job-card">
+          <div class="block-title">Operario — Car Wash (Mariano Melgar)</div>
+          <p class="block-desc">Trabajo en equipo y cumplimiento de responsabilidades operativas.</p>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

@@ -71,7 +71,7 @@ export function Projects() {
     {
       id: 3,
       type: 'production',
-      title: 'SolInd — E-Commerce Industrial',
+      title: 'Fabriconstruc — E-Commerce Industrial',
       description:
         'Plataforma corporativa + e-commerce para empresa industrial peruana (productos y servicios). HTML, CSS personalizado y Bootstrap 5 en front; backend PHP con panel de administración (categorías, productos, pedidos), sesiones, CSRF y pasarela Mercado Pago. Desplegado en cPanel en producción.',
       tags: ['HTML', 'CSS', 'Bootstrap 5', 'PHP', 'MySQL', 'Mercado Pago', 'cPanel'],
