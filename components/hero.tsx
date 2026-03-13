@@ -53,10 +53,12 @@ export function Hero() {
                   GitHub
                 </Button>
               </a>
-              <Button variant="outline" className="border-border hover:border-primary hover:bg-primary/10 font-semibold rounded-xl">
-                <FileDown className="w-4 h-4 mr-2" />
-                Descargar CV
-              </Button>
+              <a href="/Roniel_Chambilla_CV.html" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="border-border hover:border-primary hover:bg-primary/10 font-semibold rounded-xl">
+                  <FileDown className="w-4 h-4 mr-2" />
+                  Descargar CV
+                </Button>
+              </a>
             </div>
           </div>
 
