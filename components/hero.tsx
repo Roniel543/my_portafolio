@@ -63,12 +63,12 @@ export function Hero() {
           </div>
 
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-sm aspect-square rounded-3xl border border-border/50 shadow-2xl shadow-black/20 overflow-hidden bg-card">
+            <div className="relative w-full max-w-sm aspect-square p-[2px] bg-gradient-to-br from-orange-500 to-red-700 rounded-3xl border border-border/50 shadow-2xl shadow-black/20 overflow-hidden bg-card">
               <Image
                 src="/photo_r2.png"
                 alt="Roniel Chambilla"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top "
                 sizes="(max-width: 1024px) 0px, 384px"
                 priority
               />

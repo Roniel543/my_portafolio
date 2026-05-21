@@ -28,7 +28,7 @@ export function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center justify-center">
-            <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border/50 shadow-xl overflow-hidden bg-card">
+            <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border/50 shadow-xl overflow-hidden bg-card p-[2px] bg-gradient-to-br from-orange-500 to-red-700">
               <Image
                 src="/photo_r2.png"
                 alt={NAME}
