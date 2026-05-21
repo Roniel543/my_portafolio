@@ -30,7 +30,7 @@ export function About() {
           <div className="flex flex-col items-center justify-center">
             <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border/50 shadow-xl overflow-hidden bg-card">
               <Image
-                src="/roniel.png"
+                src="/photo_roniel.png"
                 alt={NAME}
                 fill
                 className="object-cover object-top"
